@@ -12,9 +12,9 @@ function pares(numbers, total)
         {
             if(tmp.length !== 0)
             {
-                if((numbers[i] + answer[0]) === total)
+                if((numbers[i] + tmp[0]) === total)
                 {
-                    answer.push(numbers[i]);
+                    tmp.push(numbers[i]);
 
                     numbers.splice(i, 1);
 
@@ -27,13 +27,16 @@ function pares(numbers, total)
             }
             else
             {
-                answer.push(numbers[i]);
+                tmp.push(numbers[i]);
                 j = i;
             }
         }
 
-        if(tmp.length === 2)
+        if(tmp.length === 2){
             answer.push(tmp);
+            tmp = [];
+            console.log("Mostrando " + tmp);
+        }
 
     }
 
